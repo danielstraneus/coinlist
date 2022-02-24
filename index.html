@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coinlist</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/cf97e35921.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="marquee">
+      <table class="table-head-2">
+        <tr>
+          <td>
+            <div class="marquee-div" id="marquee-global"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="header-container">
+      <div id="header">
+        <h1>Coinlist <i id="coin" class="fas fa-coins"></i></h1>
+      </div>
+      <h2>cyptocurrency stock listings<i class="fas fa-cubes"></i></h2>
+
+      <div class="button-div">
+        <input class="buttons" id="refresh" type="button" value="refresh" />
+        <input class="buttons" id="colors" type="button" value="colors" />
+        <input class="buttons" id="blink" type="button" value="news" />
+      </div>
+    </div>
+
+    <div class="marquee">
+      <table class="table-head">
+        <tr>
+          <td>
+            <div class="marquee-div" id="marquee-up"></div>
+          </td>
+        </tr>
+        <td>
+          <div class="marquee-div" id="marquee-down"></div>
+        </td>
+      </table>
+    </div>
+
+    <div class="container">
+      <table id="main-table">
+        <tr>
+          <th>#</th>
+          <th><i id="menu-coin" class="fas fa-coins"></i></th>
+          <th>name</th>
+          <th>id</th>
+          <th>price eur</th>
+          <th>price usd</th>
+          <th>% 1h</th>
+          <th>% 24h</th>
+          <th>% 7d</th>
+        </tr>
+        <tr>
+          <td id="rank-1"></td>
+          <td class="icons" id="icon-1"></td>
+          <td id="btc"></td>
+          <td id="btc-symbol"></td>
+          <td id="eur-1"></td>
+          <td id="btc-price"></td>
+          <td class="change" id="btc-change1h"></td>
+          <td class="change" id="btc-change24"></td>
+          <td id="btc-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-2"></td>
+          <td class="icons" id="icon-2"></td>
+          <td id="eth"></td>
+          <td id="eth-symbol"></td>
+          <td id="eur-2"></td>
+          <td id="eth-price"></td>
+          <td id="eth-change1h"></td>
+          <td id="eth-change24"></td>
+          <td id="eth-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-3"></td>
+          <td class="icons" id="icon-3"></td>
+          <td id="bnb"></td>
+          <td id="bnb-symbol"></td>
+          <td id="eur-3"></td>
+          <td id="bnb-price"></td>
+          <td id="bnb-change1h"></td>
+          <td id="bnb-change24"></td>
+          <td id="bnb-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-4"></td>
+          <td class="icons" id="icon-4"></td>
+          <td id="ada"></td>
+          <td id="ada-symbol"></td>
+          <td id="eur-4"></td>
+          <td id="ada-price"></td>
+          <td id="ada-change1h"></td>
+          <td id="ada-change24"></td>
+          <td id="ada-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-5"></td>
+          <td class="icons" id="icon-5"></td>
+          <td id="tether"></td>
+          <td id="tether-symbol"></td>
+          <td id="eur-5"></td>
+          <td id="tether-price"></td>
+          <td id="tether-change1h"></td>
+          <td id="tether-change24"></td>
+          <td id="tether-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-6"></td>
+          <td class="icons" id="icon-6"></td>
+          <td id="solana"></td>
+          <td id="solana-symbol"></td>
+          <td id="eur-6"></td>
+          <td id="solana-price"></td>
+          <td id="solana-change1h"></td>
+          <td id="solana-change24"></td>
+          <td id="solana-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-7"></td>
+          <td class="icons" id="icon-7"></td>
+          <td id="xrp"></td>
+          <td id="xrp-symbol"></td>
+          <td id="eur-7"></td>
+          <td id="xrp-price"></td>
+          <td id="xrp-change1h"></td>
+          <td id="xrp-change24"></td>
+          <td id="xrp-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-8"></td>
+          <td class="icons" id="icon-8"></td>
+          <td id="doge"></td>
+          <td id="doge-symbol"></td>
+          <td id="eur-8"></td>
+          <td id="doge-price"></td>
+          <td id="doge-change1h"></td>
+          <td id="doge-change24"></td>
+          <td id="doge-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-9"></td>
+          <td class="icons" id="icon-9"></td>
+          <td id="usd"></td>
+          <td id="usd-symbol"></td>
+          <td id="eur-9"></td>
+          <td id="usd-price"></td>
+          <td id="usd-change1h"></td>
+          <td id="usd-change24"></td>
+          <td id="usd-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-10"></td>
+          <td class="icons" id="icon-10"></td>
+          <td id="dot"></td>
+          <td id="dot-symbol"></td>
+          <td id="eur-10"></td>
+          <td id="dot-price"></td>
+          <td id="dot-change1h"></td>
+          <td id="dot-change24"></td>
+          <td id="dot-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-11"></td>
+          <td class="icons" id="icon-11"></td>
+          <td id="luna"></td>
+          <td id="luna-symbol"></td>
+          <td id="eur-11"></td>
+          <td id="luna-price"></td>
+          <td id="luna-change1h"></td>
+          <td id="luna-change24"></td>
+          <td id="luna-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-12"></td>
+          <td class="icons" id="icon-12"></td>
+          <td id="uni"></td>
+          <td id="uni-symbol"></td>
+          <td id="eur-12"></td>
+          <td id="uni-price"></td>
+          <td id="uni-change1h"></td>
+          <td id="uni-change24"></td>
+          <td id="uni-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-13"></td>
+          <td class="icons" id="icon-13"></td>
+          <td id="ltc"></td>
+          <td id="ltc-symbol"></td>
+          <td id="eur-13"></td>
+          <td id="ltc-price"></td>
+          <td id="ltc-change1h"></td>
+          <td id="ltc-change24"></td>
+          <td id="ltc-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-14"></td>
+          <td class="icons" id="icon-14"></td>
+          <td id="avax"></td>
+          <td id="avax-symbol"></td>
+          <td id="eur-14"></td>
+          <td id="avax-price"></td>
+          <td id="avax-change1h"></td>
+          <td id="avax-change24"></td>
+          <td id="avax-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-15"></td>
+          <td class="icons" id="icon-15"></td>
+          <td id="wbtc"></td>
+          <td id="wbtc-symbol"></td>
+          <td id="eur-15"></td>
+          <td id="wbtc-price"></td>
+          <td id="wbtc-change1h"></td>
+          <td id="wbtc-change24"></td>
+          <td id="wbtc-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-16"></td>
+          <td class="icons" id="icon-16"></td>
+          <td id="busd"></td>
+          <td id="busd-symbol"></td>
+          <td id="eur-16"></td>
+          <td id="busd-price"></td>
+          <td id="busd-change1h"></td>
+          <td id="busd-change24"></td>
+          <td id="busd-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-17"></td>
+          <td class="icons" id="icon-17"></td>
+          <td id="link"></td>
+          <td id="link-symbol"></td>
+          <td id="eur-17"></td>
+          <td id="link-price"></td>
+          <td id="link-change1h"></td>
+          <td id="link-change24"></td>
+          <td id="link-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-18"></td>
+          <td class="icons" id="icon-18"></td>
+          <td id="bch"></td>
+          <td id="bch-symbol"></td>
+          <td id="eur-18"></td>
+          <td id="bch-price"></td>
+          <td id="bch-change1h"></td>
+          <td id="bch-change24"></td>
+          <td id="bch-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-19"></td>
+          <td class="icons" id="icon-19"></td>
+          <td id="shib"></td>
+          <td id="shib-symbol"></td>
+          <td id="eur-19"></td>
+          <td id="shib-price"></td>
+          <td id="shib-change1h"></td>
+          <td id="shib-change24"></td>
+          <td id="shib-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-20"></td>
+          <td class="icons" id="icon-20"></td>
+          <td id="algo"></td>
+          <td id="algo-symbol"></td>
+          <td id="eur-20"></td>
+          <td id="algo-price"></td>
+          <td id="algo-change1h"></td>
+          <td id="algo-change24"></td>
+          <td id="algo-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-21"></td>
+          <td class="icons" id="icon-21"></td>
+          <td id="xlm"></td>
+          <td id="xlm-symbol"></td>
+          <td id="eur-21"></td>
+          <td id="xlm-price"></td>
+          <td id="xlm-change1h"></td>
+          <td id="xlm-change24"></td>
+          <td id="xlm-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-22"></td>
+          <td class="icons" id="icon-22"></td>
+          <td id="vet"></td>
+          <td id="vet-symbol"></td>
+          <td id="eur-22"></td>
+          <td id="vet-price"></td>
+          <td id="vet-change1h"></td>
+          <td id="vet-change24"></td>
+          <td id="vet-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-23"></td>
+          <td class="icons" id="icon-23"></td>
+          <td id="atom"></td>
+          <td id="atom-symbol"></td>
+          <td id="eur-23"></td>
+          <td id="atom-price"></td>
+          <td id="atom-change1h"></td>
+          <td id="atom-change24"></td>
+          <td id="atom-change7d"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-24"></td>
+          <td class="icons" id="icon-24"></td>
+          <td id="axs"></td>
+          <td id="axs-symbol"></td>
+          <td id="eur-24"></td>
+          <td id="axs-price"></td>
+          <td id="axs-change1h"></td>
+          <td id="axs-change24"></td>
+          <td id="axs-change7d"></td>
+        </tr>
+        <tr>
+          <td id="rank-25"></td>
+          <td class="icons" id="icon-25"></td>
+          <td id="name-25"></td>
+          <td id="symbol-25"></td>
+          <td id="eur-25"></td>
+          <td id="price-25"></td>
+          <td id="change1h-25"></td>
+          <td id="change24-25"></td>
+          <td id="change7d-25"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-26"></td>
+          <td class="icons" id="icon-26"></td>
+          <td id="name-26"></td>
+          <td id="symbol-26"></td>
+          <td id="eur-26"></td>
+          <td id="price-26"></td>
+          <td id="change1h-26"></td>
+          <td id="change24-26"></td>
+          <td id="change7d-26"></td>
+        </tr>
+        <tr>
+          <td id="rank-27"></td>
+          <td class="icons" id="icon-27"></td>
+          <td id="name-27"></td>
+          <td id="symbol-27"></td>
+          <td id="eur-27"></td>
+          <td id="price-27"></td>
+          <td id="change1h-27"></td>
+          <td id="change24-27"></td>
+          <td id="change7d-27"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-28"></td>
+          <td class="icons" id="icon-28"></td>
+          <td id="name-28"></td>
+          <td id="symbol-28"></td>
+          <td id="eur-28"></td>
+          <td id="price-28"></td>
+          <td id="change1h-28"></td>
+          <td id="change24-28"></td>
+          <td id="change7d-28"></td>
+        </tr>
+        <tr>
+          <td id="rank-29"></td>
+          <td class="icons" id="icon-29"></td>
+          <td id="name-29"></td>
+          <td id="symbol-29"></td>
+          <td id="eur-29"></td>
+          <td id="price-29"></td>
+          <td id="change1h-29"></td>
+          <td id="change24-29"></td>
+          <td id="change7d-29"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-30"></td>
+          <td class="icons" id="icon-30"></td>
+          <td id="name-30"></td>
+          <td id="symbol-30"></td>
+          <td id="eur-30"></td>
+          <td id="price-30"></td>
+          <td id="change1h-30"></td>
+          <td id="change24-30"></td>
+          <td id="change7d-30"></td>
+        </tr>
+        <tr>
+          <td id="rank-31"></td>
+          <td class="icons" id="icon-31"></td>
+          <td id="name-31"></td>
+          <td id="symbol-31"></td>
+          <td id="eur-31"></td>
+          <td id="price-31"></td>
+          <td id="change1h-31"></td>
+          <td id="change24-31"></td>
+          <td id="change7d-31"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-32"></td>
+          <td class="icons" id="icon-32"></td>
+          <td id="name-32"></td>
+          <td id="symbol-32"></td>
+          <td id="eur-32"></td>
+          <td id="price-32"></td>
+          <td id="change1h-32"></td>
+          <td id="change24-32"></td>
+          <td id="change7d-32"></td>
+        </tr>
+        <tr>
+          <td id="rank-33"></td>
+          <td class="icons" id="icon-33"></td>
+          <td id="name-33"></td>
+          <td id="symbol-33"></td>
+          <td id="eur-33"></td>
+          <td id="price-33"></td>
+          <td id="change1h-33"></td>
+          <td id="change24-33"></td>
+          <td id="change7d-33"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-34"></td>
+          <td class="icons" id="icon-34"></td>
+          <td id="name-34"></td>
+          <td id="symbol-34"></td>
+          <td id="eur-34"></td>
+          <td id="price-34"></td>
+          <td id="change1h-34"></td>
+          <td id="change24-34"></td>
+          <td id="change7d-34"></td>
+        </tr>
+        <tr>
+          <td id="rank-35"></td>
+          <td class="icons" id="icon-35"></td>
+          <td id="name-35"></td>
+          <td id="symbol-35"></td>
+          <td id="eur-35"></td>
+          <td id="price-35"></td>
+          <td id="change1h-35"></td>
+          <td id="change24-35"></td>
+          <td id="change7d-35"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-36"></td>
+          <td class="icons" id="icon-36"></td>
+          <td id="name-36"></td>
+          <td id="symbol-36"></td>
+          <td id="eur-36"></td>
+          <td id="price-36"></td>
+          <td id="change1h-36"></td>
+          <td id="change24-36"></td>
+          <td id="change7d-36"></td>
+        </tr>
+        <tr>
+          <td id="rank-37"></td>
+          <td class="icons" id="icon-37"></td>
+          <td id="name-37"></td>
+          <td id="symbol-37"></td>
+          <td id="eur-37"></td>
+          <td id="price-37"></td>
+          <td id="change1h-37"></td>
+          <td id="change24-37"></td>
+          <td id="change7d-37"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-38"></td>
+          <td class="icons" id="icon-38"></td>
+          <td id="name-38"></td>
+          <td id="symbol-38"></td>
+          <td id="eur-38"></td>
+          <td id="price-38"></td>
+          <td id="change1h-38"></td>
+          <td id="change24-38"></td>
+          <td id="change7d-38"></td>
+        </tr>
+        <tr>
+          <td id="rank-39"></td>
+          <td class="icons" id="icon-39"></td>
+          <td id="name-39"></td>
+          <td id="symbol-39"></td>
+          <td id="eur-39"></td>
+          <td id="price-39"></td>
+          <td id="change1h-39"></td>
+          <td id="change24-39"></td>
+          <td id="change7d-39"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-40"></td>
+          <td class="icons" id="icon-40"></td>
+          <td id="name-40"></td>
+          <td id="symbol-40"></td>
+          <td id="eur-40"></td>
+          <td id="price-40"></td>
+          <td id="change1h-40"></td>
+          <td id="change24-40"></td>
+          <td id="change7d-40"></td>
+        </tr>
+        <tr>
+          <td id="rank-41"></td>
+          <td class="icons" id="icon-41"></td>
+          <td id="name-41"></td>
+          <td id="symbol-41"></td>
+          <td id="eur-41"></td>
+          <td id="price-41"></td>
+          <td id="change1h-41"></td>
+          <td id="change24-41"></td>
+          <td id="change7d-41"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-42"></td>
+          <td class="icons" id="icon-42"></td>
+          <td id="name-42"></td>
+          <td id="symbol-42"></td>
+          <td id="eur-42"></td>
+          <td id="price-42"></td>
+          <td id="change1h-42"></td>
+          <td id="change24-42"></td>
+          <td id="change7d-42"></td>
+        </tr>
+        <tr>
+          <td id="rank-43"></td>
+          <td class="icons" id="icon-43"></td>
+          <td id="name-43"></td>
+          <td id="symbol-43"></td>
+          <td id="eur-43"></td>
+          <td id="price-43"></td>
+          <td id="change1h-43"></td>
+          <td id="change24-43"></td>
+          <td id="change7d-43"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-44"></td>
+          <td class="icons" id="icon-44"></td>
+          <td id="name-44"></td>
+          <td id="symbol-44"></td>
+          <td id="eur-44"></td>
+          <td id="price-44"></td>
+          <td id="change1h-44"></td>
+          <td id="change24-44"></td>
+          <td id="change7d-44"></td>
+        </tr>
+        <tr>
+          <td id="rank-45"></td>
+          <td class="icons" id="icon-45"></td>
+          <td id="name-45"></td>
+          <td id="symbol-45"></td>
+          <td id="eur-45"></td>
+          <td id="price-45"></td>
+          <td id="change1h-45"></td>
+          <td id="change24-45"></td>
+          <td id="change7d-45"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-46"></td>
+          <td class="icons" id="icon-46"></td>
+          <td id="name-46"></td>
+          <td id="symbol-46"></td>
+          <td id="eur-46"></td>
+          <td id="price-46"></td>
+          <td id="change1h-46"></td>
+          <td id="change24-46"></td>
+          <td id="change7d-46"></td>
+        </tr>
+        <tr>
+          <td id="rank-47"></td>
+          <td class="icons" id="icon-47"></td>
+          <td id="name-47"></td>
+          <td id="symbol-47"></td>
+          <td id="eur-47"></td>
+          <td id="price-47"></td>
+          <td id="change1h-47"></td>
+          <td id="change24-47"></td>
+          <td id="change7d-47"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-48"></td>
+          <td class="icons" id="icon-48"></td>
+          <td id="name-48"></td>
+          <td id="symbol-48"></td>
+          <td id="eur-48"></td>
+          <td id="price-48"></td>
+          <td id="change1h-48"></td>
+          <td id="change24-48"></td>
+          <td id="change7d-48"></td>
+        </tr>
+        <tr>
+          <td id="rank-49"></td>
+          <td class="icons" id="icon-49"></td>
+          <td id="name-49"></td>
+          <td id="symbol-49"></td>
+          <td id="eur-49"></td>
+          <td id="price-49"></td>
+          <td id="change1h-49"></td>
+          <td id="change24-49"></td>
+          <td id="change7d-49"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-50"></td>
+          <td class="icons" id="icon-50"></td>
+          <td id="name-50"></td>
+          <td id="symbol-50"></td>
+          <td id="eur-50"></td>
+          <td id="price-50"></td>
+          <td id="change1h-50"></td>
+          <td id="change24-50"></td>
+          <td id="change7d-50"></td>
+        </tr>
+        <tr>
+          <td id="rank-51"></td>
+          <td class="icons" id="icon-51"></td>
+          <td id="name-51"></td>
+          <td id="symbol-51"></td>
+          <td id="eur-51"></td>
+          <td id="price-51"></td>
+          <td id="change1h-51"></td>
+          <td id="change24-51"></td>
+          <td id="change7d-51"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-52"></td>
+          <td class="icons" id="icon-52"></td>
+          <td id="name-52"></td>
+          <td id="symbol-52"></td>
+          <td id="eur-52"></td>
+          <td id="price-52"></td>
+          <td id="change1h-52"></td>
+          <td id="change24-52"></td>
+          <td id="change7d-52"></td>
+        </tr>
+        <tr>
+          <td id="rank-53"></td>
+          <td class="icons" id="icon-53"></td>
+          <td id="name-53"></td>
+          <td id="symbol-53"></td>
+          <td id="eur-53"></td>
+          <td id="price-53"></td>
+          <td id="change1h-53"></td>
+          <td id="change24-53"></td>
+          <td id="change7d-53"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-54"></td>
+          <td class="icons" id="icon-54"></td>
+          <td id="name-54"></td>
+          <td id="symbol-54"></td>
+          <td id="eur-54"></td>
+          <td id="price-54"></td>
+          <td id="change1h-54"></td>
+          <td id="change24-54"></td>
+          <td id="change7d-54"></td>
+        </tr>
+        <tr>
+          <td id="rank-55"></td>
+          <td class="icons" id="icon-55"></td>
+          <td id="name-55"></td>
+          <td id="symbol-55"></td>
+          <td id="eur-55"></td>
+          <td id="price-55"></td>
+          <td id="change1h-55"></td>
+          <td id="change24-55"></td>
+          <td id="change7d-55"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-56"></td>
+          <td class="icons" id="icon-56"></td>
+          <td id="name-56"></td>
+          <td id="symbol-56"></td>
+          <td id="eur-56"></td>
+          <td id="price-56"></td>
+          <td id="change1h-56"></td>
+          <td id="change24-56"></td>
+          <td id="change7d-56"></td>
+        </tr>
+        <tr>
+          <td id="rank-57"></td>
+          <td class="icons" id="icon-57"></td>
+          <td id="name-57"></td>
+          <td id="symbol-57"></td>
+          <td id="eur-57"></td>
+          <td id="price-57"></td>
+          <td id="change1h-57"></td>
+          <td id="change24-57"></td>
+          <td id="change7d-57"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-58"></td>
+          <td class="icons" id="icon-58"></td>
+          <td id="name-58"></td>
+          <td id="symbol-58"></td>
+          <td id="eur-58"></td>
+          <td id="price-58"></td>
+          <td id="change1h-58"></td>
+          <td id="change24-58"></td>
+          <td id="change7d-58"></td>
+        </tr>
+        <tr>
+          <td id="rank-59"></td>
+          <td class="icons" id="icon-59"></td>
+          <td id="name-59"></td>
+          <td id="symbol-59"></td>
+          <td id="eur-59"></td>
+          <td id="price-59"></td>
+          <td id="change1h-59"></td>
+          <td id="change24-59"></td>
+          <td id="change7d-59"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-60"></td>
+          <td class="icons" id="icon-60"></td>
+          <td id="name-60"></td>
+          <td id="symbol-60"></td>
+          <td id="eur-60"></td>
+          <td id="price-60"></td>
+          <td id="change1h-60"></td>
+          <td id="change24-60"></td>
+          <td id="change7d-60"></td>
+        </tr>
+        <tr>
+          <td id="rank-61"></td>
+          <td class="icons" id="icon-61"></td>
+          <td id="name-61"></td>
+          <td id="symbol-61"></td>
+          <td id="eur-61"></td>
+          <td id="price-61"></td>
+          <td id="change1h-61"></td>
+          <td id="change24-61"></td>
+          <td id="change7d-61"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-62"></td>
+          <td class="icons" id="icon-62"></td>
+          <td id="name-62"></td>
+          <td id="symbol-62"></td>
+          <td id="eur-62"></td>
+          <td id="price-62"></td>
+          <td id="change1h-62"></td>
+          <td id="change24-62"></td>
+          <td id="change7d-62"></td>
+        </tr>
+        <tr>
+          <td id="rank-63"></td>
+          <td class="icons" id="icon-63"></td>
+          <td id="name-63"></td>
+          <td id="symbol-63"></td>
+          <td id="eur-63"></td>
+          <td id="price-63"></td>
+          <td id="change1h-63"></td>
+          <td id="change24-63"></td>
+          <td id="change7d-63"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-64"></td>
+          <td class="icons" id="icon-64"></td>
+          <td id="name-64"></td>
+          <td id="symbol-64"></td>
+          <td id="eur-64"></td>
+          <td id="price-64"></td>
+          <td id="change1h-64"></td>
+          <td id="change24-64"></td>
+          <td id="change7d-64"></td>
+        </tr>
+        <tr>
+          <td id="rank-65"></td>
+          <td class="icons" id="icon-65"></td>
+          <td id="name-65"></td>
+          <td id="symbol-65"></td>
+          <td id="eur-65"></td>
+          <td id="price-65"></td>
+          <td id="change1h-65"></td>
+          <td id="change24-65"></td>
+          <td id="change7d-65"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-66"></td>
+          <td class="icons" id="icon-66"></td>
+          <td id="name-66"></td>
+          <td id="symbol-66"></td>
+          <td id="eur-66"></td>
+          <td id="price-66"></td>
+          <td id="change1h-66"></td>
+          <td id="change24-66"></td>
+          <td id="change7d-66"></td>
+        </tr>
+        <tr>
+          <td id="rank-67"></td>
+          <td class="icons" id="icon-67"></td>
+          <td id="name-67"></td>
+          <td id="symbol-67"></td>
+          <td id="eur-67"></td>
+          <td id="price-67"></td>
+          <td id="change1h-67"></td>
+          <td id="change24-67"></td>
+          <td id="change7d-67"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-68"></td>
+          <td class="icons" id="icon-68"></td>
+          <td id="name-68"></td>
+          <td id="symbol-68"></td>
+          <td id="eur-68"></td>
+          <td id="price-68"></td>
+          <td id="change1h-68"></td>
+          <td id="change24-68"></td>
+          <td id="change7d-68"></td>
+        </tr>
+        <tr>
+          <td id="rank-69"></td>
+          <td class="icons" id="icon-69"></td>
+          <td id="name-69"></td>
+          <td id="symbol-69"></td>
+          <td id="eur-69"></td>
+          <td id="price-69"></td>
+          <td id="change1h-69"></td>
+          <td id="change24-69"></td>
+          <td id="change7d-69"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-70"></td>
+          <td class="icons" id="icon-70"></td>
+          <td id="name-70"></td>
+          <td id="symbol-70"></td>
+          <td id="eur-70"></td>
+          <td id="price-70"></td>
+          <td id="change1h-70"></td>
+          <td id="change24-70"></td>
+          <td id="change7d-70"></td>
+        </tr>
+        <tr>
+          <td id="rank-71"></td>
+          <td class="icons" id="icon-71"></td>
+          <td id="name-71"></td>
+          <td id="symbol-71"></td>
+          <td id="eur-71"></td>
+          <td id="price-71"></td>
+          <td id="change1h-71"></td>
+          <td id="change24-71"></td>
+          <td id="change7d-71"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-72"></td>
+          <td class="icons" id="icon-72"></td>
+          <td id="name-72"></td>
+          <td id="symbol-72"></td>
+          <td id="eur-72"></td>
+          <td id="price-72"></td>
+          <td id="change1h-72"></td>
+          <td id="change24-72"></td>
+          <td id="change7d-72"></td>
+        </tr>
+        <tr>
+          <td id="rank-73"></td>
+          <td class="icons" id="icon-73"></td>
+          <td id="name-73"></td>
+          <td id="symbol-73"></td>
+          <td id="eur-73"></td>
+          <td id="price-73"></td>
+          <td id="change1h-73"></td>
+          <td id="change24-73"></td>
+          <td id="change7d-73"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-74"></td>
+          <td class="icons" id="icon-74"></td>
+          <td id="name-74"></td>
+          <td id="symbol-74"></td>
+          <td id="eur-74"></td>
+          <td id="price-74"></td>
+          <td id="change1h-74"></td>
+          <td id="change24-74"></td>
+          <td id="change7d-74"></td>
+        </tr>
+        <tr>
+          <td id="rank-75"></td>
+          <td class="icons" id="icon-75"></td>
+          <td id="name-75"></td>
+          <td id="symbol-75"></td>
+          <td id="eur-75"></td>
+          <td id="price-75"></td>
+          <td id="change1h-75"></td>
+          <td id="change24-75"></td>
+          <td id="change7d-75"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-76"></td>
+          <td class="icons" id="icon-76"></td>
+          <td id="name-76"></td>
+          <td id="symbol-76"></td>
+          <td id="eur-76"></td>
+          <td id="price-76"></td>
+          <td id="change1h-76"></td>
+          <td id="change24-76"></td>
+          <td id="change7d-76"></td>
+        </tr>
+        <tr>
+          <td id="rank-77"></td>
+          <td class="icons" id="icon-77"></td>
+          <td id="name-77"></td>
+          <td id="symbol-77"></td>
+          <td id="eur-77"></td>
+          <td id="price-77"></td>
+          <td id="change1h-77"></td>
+          <td id="change24-77"></td>
+          <td id="change7d-77"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-78"></td>
+          <td class="icons" id="icon-78"></td>
+          <td id="name-78"></td>
+          <td id="symbol-78"></td>
+          <td id="eur-78"></td>
+          <td id="price-78"></td>
+          <td id="change1h-78"></td>
+          <td id="change24-78"></td>
+          <td id="change7d-78"></td>
+        </tr>
+        <tr>
+          <td id="rank-79"></td>
+          <td class="icons" id="icon-79"></td>
+          <td id="name-79"></td>
+          <td id="symbol-79"></td>
+          <td id="eur-79"></td>
+          <td id="price-79"></td>
+          <td id="change1h-79"></td>
+          <td id="change24-79"></td>
+          <td id="change7d-79"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-80"></td>
+          <td class="icons" id="icon-80"></td>
+          <td id="name-80"></td>
+          <td id="symbol-80"></td>
+          <td id="eur-80"></td>
+          <td id="price-80"></td>
+          <td id="change1h-80"></td>
+          <td id="change24-80"></td>
+          <td id="change7d-80"></td>
+        </tr>
+        <tr>
+          <td id="rank-81"></td>
+          <td class="icons" id="icon-81"></td>
+          <td id="name-81"></td>
+          <td id="symbol-81"></td>
+          <td id="eur-81"></td>
+          <td id="price-81"></td>
+          <td id="change1h-81"></td>
+          <td id="change24-81"></td>
+          <td id="change7d-81"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-82"></td>
+          <td class="icons" id="icon-82"></td>
+          <td id="name-82"></td>
+          <td id="symbol-82"></td>
+          <td id="eur-82"></td>
+          <td id="price-82"></td>
+          <td id="change1h-82"></td>
+          <td id="change24-82"></td>
+          <td id="change7d-82"></td>
+        </tr>
+        <tr>
+          <td id="rank-83"></td>
+          <td class="icons" id="icon-83"></td>
+          <td id="name-83"></td>
+          <td id="symbol-83"></td>
+          <td id="eur-83"></td>
+          <td id="price-83"></td>
+          <td id="change1h-83"></td>
+          <td id="change24-83"></td>
+          <td id="change7d-83"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-84"></td>
+          <td class="icons" id="icon-84"></td>
+          <td id="name-84"></td>
+          <td id="symbol-84"></td>
+          <td id="eur-84"></td>
+          <td id="price-84"></td>
+          <td id="change1h-84"></td>
+          <td id="change24-84"></td>
+          <td id="change7d-84"></td>
+        </tr>
+        <tr>
+          <td id="rank-85"></td>
+          <td class="icons" id="icon-85"></td>
+          <td id="name-85"></td>
+          <td id="symbol-85"></td>
+          <td id="eur-85"></td>
+          <td id="price-85"></td>
+          <td id="change1h-85"></td>
+          <td id="change24-85"></td>
+          <td id="change7d-85"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-86"></td>
+          <td class="icons" id="icon-86"></td>
+          <td id="name-86"></td>
+          <td id="symbol-86"></td>
+          <td id="eur-86"></td>
+          <td id="price-86"></td>
+          <td id="change1h-86"></td>
+          <td id="change24-86"></td>
+          <td id="change7d-86"></td>
+        </tr>
+        <tr>
+          <td id="rank-87"></td>
+          <td class="icons" id="icon-87"></td>
+          <td id="name-87"></td>
+          <td id="symbol-87"></td>
+          <td id="eur-87"></td>
+          <td id="price-87"></td>
+          <td id="change1h-87"></td>
+          <td id="change24-87"></td>
+          <td id="change7d-87"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-88"></td>
+          <td class="icons" id="icon-88"></td>
+          <td id="name-88"></td>
+          <td id="symbol-88"></td>
+          <td id="eur-88"></td>
+          <td id="price-88"></td>
+          <td id="change1h-88"></td>
+          <td id="change24-88"></td>
+          <td id="change7d-88"></td>
+        </tr>
+        <tr>
+          <td id="rank-89"></td>
+          <td class="icons" id="icon-89"></td>
+          <td id="name-89"></td>
+          <td id="symbol-89"></td>
+          <td id="eur-89"></td>
+          <td id="price-89"></td>
+          <td id="change1h-89"></td>
+          <td id="change24-89"></td>
+          <td id="change7d-89"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-90"></td>
+          <td class="icons" id="icon-90"></td>
+          <td id="name-90"></td>
+          <td id="symbol-90"></td>
+          <td id="eur-90"></td>
+          <td id="price-90"></td>
+          <td id="change1h-90"></td>
+          <td id="change24-90"></td>
+          <td id="change7d-90"></td>
+        </tr>
+        <tr>
+          <td id="rank-91"></td>
+          <td class="icons" id="icon-91"></td>
+          <td id="name-91"></td>
+          <td id="symbol-91"></td>
+          <td id="eur-91"></td>
+          <td id="price-91"></td>
+          <td id="change1h-91"></td>
+          <td id="change24-91"></td>
+          <td id="change7d-91"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-92"></td>
+          <td class="icons" id="icon-92"></td>
+          <td id="name-92"></td>
+          <td id="symbol-92"></td>
+          <td id="eur-92"></td>
+          <td id="price-92"></td>
+          <td id="change1h-92"></td>
+          <td id="change24-92"></td>
+          <td id="change7d-92"></td>
+        </tr>
+        <tr>
+          <td id="rank-93"></td>
+          <td class="icons" id="icon-93"></td>
+          <td id="name-93"></td>
+          <td id="symbol-93"></td>
+          <td id="eur-93"></td>
+          <td id="price-93"></td>
+          <td id="change1h-93"></td>
+          <td id="change24-93"></td>
+          <td id="change7d-93"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-94"></td>
+          <td class="icons" id="icon-94"></td>
+          <td id="name-94"></td>
+          <td id="symbol-94"></td>
+          <td id="eur-94"></td>
+          <td id="price-94"></td>
+          <td id="change1h-94"></td>
+          <td id="change24-94"></td>
+          <td id="change7d-94"></td>
+        </tr>
+        <tr>
+          <td id="rank-95"></td>
+          <td class="icons" id="icon-95"></td>
+          <td id="name-95"></td>
+          <td id="symbol-95"></td>
+          <td id="eur-95"></td>
+          <td id="price-95"></td>
+          <td id="change1h-95"></td>
+          <td id="change24-95"></td>
+          <td id="change7d-95"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-96"></td>
+          <td class="icons" id="icon-96"></td>
+          <td id="name-96"></td>
+          <td id="symbol-96"></td>
+          <td id="eur-96"></td>
+          <td id="price-96"></td>
+          <td id="change1h-96"></td>
+          <td id="change24-96"></td>
+          <td id="change7d-96"></td>
+        </tr>
+        <tr>
+          <td id="rank-97"></td>
+          <td class="icons" id="icon-97"></td>
+          <td id="name-97"></td>
+          <td id="symbol-97"></td>
+          <td id="eur-97"></td>
+          <td id="price-97"></td>
+          <td id="change1h-97"></td>
+          <td id="change24-97"></td>
+          <td id="change7d-97"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-98"></td>
+          <td class="icons" id="icon-98"></td>
+          <td id="name-98"></td>
+          <td id="symbol-98"></td>
+          <td id="eur-98"></td>
+          <td id="price-98"></td>
+          <td id="change1h-98"></td>
+          <td id="change24-98"></td>
+          <td id="change7d-98"></td>
+        </tr>
+        <tr>
+          <td id="rank-99"></td>
+          <td class="icons" id="icon-99"></td>
+          <td id="name-99"></td>
+          <td id="symbol-99"></td>
+          <td id="eur-99"></td>
+          <td id="price-99"></td>
+          <td id="change1h-99"></td>
+          <td id="change24-99"></td>
+          <td id="change7d-99"></td>
+        </tr>
+        <tr class="rowz">
+          <td id="rank-100"></td>
+          <td class="icons" id="icon-100"></td>
+          <td id="name-100"></td>
+          <td id="symbol-100"></td>
+          <td id="eur-100"></td>
+          <td id="price-100"></td>
+          <td id="change1h-100"></td>
+          <td id="change24-100"></td>
+          <td id="change7d-100"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="header-container">
+      <h2 id="procentual-charts">
+        percentage change charts<i class="fas fa-cubes"></i> [rank 1 - 50]
+      </h2>
+      <div class="button-div">
+        <input class="buttons" id="line-chart" type="button" value="line" />
+        <input class="buttons" id="bar-chart" type="button" value="bar" />
+        <input class="buttons" id="bubble-chart" type="button" value="bubble" />
+        <!-- <input class="buttons" id="donut-chart" type="button" value="donut" /> -->
+      </div>
+    </div>
+
+    <div id="chart-flex">
+      <div>
+        <div id="charts" class="chart">
+          <canvas id="my-chart-1h"></canvas>
+        </div>
+
+        <div class="chart">
+          <canvas class="canvas-grey" id="my-chart-24h"></canvas>
+        </div>
+
+        <div class="chart">
+          <canvas id="my-chart-7d"></canvas>
+        </div>
+      </div>
+
+      <div>
+        <div class="chart">
+          <canvas class="canvas-grey" id="my-chart-1h-bottom"></canvas>
+        </div>
+
+        <div class="chart">
+          <canvas id="my-chart-24h-bottom"></canvas>
+        </div>
+
+        <div class="chart">
+          <canvas class="canvas-grey" id="my-chart-7d-bottom"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="header-container">
+      <h2 id="procentual-charts2">
+        percentage change charts<i class="fas fa-cubes"></i> [rank 51 - 100]
+      </h2>
+    </div>
+    <div id="chart-flex2">
+      <div>
+        <div id="charts" class="chart">
+          <canvas id="my-chart-1h-50"></canvas>
+        </div>
+
+        <div class="chart">
+          <canvas class="canvas-grey" id="my-chart-24h-50"></canvas>
+        </div>
+
+        <div class="chart">
+          <canvas id="my-chart-7d-50"></canvas>
+        </div>
+      </div>
+
+      <div>
+        <div class="chart">
+          <canvas class="canvas-grey" id="my-chart-1h-bottom-50"></canvas>
+        </div>
+
+        <div class="chart">
+          <canvas id="my-chart-24h-bottom-50"></canvas>
+        </div>
+
+        <div class="chart">
+          <canvas class="canvas-grey" id="my-chart-7d-bottom-50"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-container">
+      <h2 id="exchanges">exchanges<i class="fas fa-shopping-basket"></i></h2>
+    </div>
+    <div class="container">
+      <table>
+        <tr>
+          <th>name</th>
+          <th>country</th>
+          <th>website</th>
+        </tr>
+        <tr>
+          <td id="exc1-id"></td>
+          <td id="exc1-country"></td>
+          <td><a id="exc1-site" href="https://www.binance.com"></a></td>
+        </tr>
+        <tr class="rowz">
+          <td id="exc2-id"></td>
+          <td id="exc2-country"></td>
+          <td><a id="exc2-site" href=""></a></td>
+        </tr>
+        <tr>
+          <td id="exc3-id"></td>
+          <td id="exc3-country"></td>
+          <td><a id="exc3-site" href="https://www.citex.co.kr/#/home"></a></td>
+        </tr>
+        <tr class="rowz">
+          <td id="exc4-id"></td>
+          <td id="exc4-country"></td>
+          <td><a id="exc4-site" href="https://www.okex.com/"></a></td>
+        </tr>
+        <tr>
+          <td id="exc5-id"></td>
+          <td id="exc5-country"></td>
+          <td><a id="exc5-site" href="https://www.zg.com/"></a></td>
+        </tr>
+        <tr class="rowz">
+          <td id="exc6-id"></td>
+          <td id="exc6-country"></td>
+          <td><a id="exc6-site" href="https://www.huobi.com/"></a></td>
+        </tr>
+        <tr>
+          <td id="exc7-id"></td>
+          <td id="exc7-country"></td>
+          <td><a id="exc7-site" href="https://www.coinbase.com/"></a></td>
+        </tr>
+        <tr class="rowz">
+          <td id="exc8-id"></td>
+          <td id="exc8-country"></td>
+          <td><a id="exc8-site" href="https://www.zt.com/"></a></td>
+        </tr>
+        <tr>
+          <td id="exc9-id"></td>
+          <td id="exc9-country"></td>
+          <td><a id="exc9-site" href="https://hitbtc.com/"></a></td>
+        </tr>
+        <tr class="rowz">
+          <td id="exc10-id"></td>
+          <td id="exc10-country"></td>
+          <td><a id="exc10-site" href="https://ftx.com/"></a></td>
+        </tr>
+        <tr>
+          <td id="exc11-id"></td>
+          <td id="exc11-country"></td>
+          <td><a id="exc11-site" href="https://www.bitrue.com/"></a></td>
+        </tr>
+        <tr class="rowz">
+          <td id="exc12-id"></td>
+          <td id="exc12-country"></td>
+          <td><a id="exc12-site" href="https://www.kucoin.com"></a></td>
+        </tr>
+        <tr>
+          <td id="exc13-id"></td>
+          <td id="exc13-country"></td>
+          <td><a id="exc13-site" href="https://exchange.bitcoin.com/"></a></td>
+        </tr>
+        <tr class="rowz">
+          <td id="exc14-id"></td>
+          <td id="exc14-country"></td>
+          <td><a id="exc14-site" href="https://www.zbg.com"></a></td>
+        </tr>
+        <tr>
+          <td id="exc15-id"></td>
+          <td id="exc15-country"></td>
+          <td><a id="exc15-site" href="https://www.zb.com"></a></td>
+        </tr>
+        <tr class="rowz">
+          <td id="exc16-id"></td>
+          <td id="exc16-country"></td>
+          <td><a id="exc16-site" href="https://upbit.com/"></a></td>
+        </tr>
+        <tr>
+          <td id="exc17-id"></td>
+          <td id="exc17-country"></td>
+          <td><a id="exc17-site" href="https://p2pb2b.io/"></a></td>
+        </tr>
+        <tr class="rowz">
+          <td id="exc18-id"></td>
+          <td id="exc18-country"></td>
+          <td><a id="exc18-site" href="https://www.kkcoin.com"></a></td>
+        </tr>
+        <tr>
+          <td id="exc19-id"></td>
+          <td id="exc19-country"></td>
+          <td><a id="exc19-site" href="https://www.kraken.com"></a></td>
+        </tr>
+        <tr class="rowz">
+          <td id="exc20-id"></td>
+          <td id="exc20-country"></td>
+          <td><a id="exc20-site" href="https://www.bitfinex.com"></a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="container" id="footer-container">
+      <footer>
+        <div>Copyleft 1995 by Rev X. No Rights Reserved.</div>
+        <div>Coinlist is Powered by Mountain Dew.</div>
+        <div><p id="kanye-rest"></p></div>
+        <a href="#header"><i id="footer-coin" class="fas fa-coins"></i></a>
+      </footer>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
