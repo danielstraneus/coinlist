@@ -5954,85 +5954,85 @@ Promise.all([
     response.json()
   ),
 ]).then((results) => {
-  document.querySelector("#exc1-id").innerHTML = results[0][5].name_id;
-  document.querySelector("#exc1-country").innerHTML = results[0][5].country;
-  document.querySelector("#exc1-site").innerHTML = results[0][5].url;
+  document.querySelector("#exc1-id").innerHTML = results[0][487].name_id;
+  document.querySelector("#exc1-country").innerHTML = results[0][487].country;
+  document.querySelector("#exc1-site").innerHTML = results[0][487].url;
 
-  document.querySelector("#exc2-id").innerHTML = results[0][469].name_id;
-  document.querySelector("#exc2-country").innerHTML = results[0][469].country;
-  document.querySelector("#exc2-site").innerHTML = results[0][469].url;
+  document.querySelector("#exc2-id").innerHTML = results[0][5].name_id;
+  document.querySelector("#exc2-country").innerHTML = results[0][5].country;
+  document.querySelector("#exc2-site").innerHTML = results[0][5].url;
 
-  document.querySelector("#exc3-id").innerHTML = results[0][66].name_id;
-  document.querySelector("#exc3-country").innerHTML = results[0][66].country;
-  document.querySelector("#exc3-site").innerHTML = results[0][66].url;
+  document.querySelector("#exc3-id").innerHTML = results[0][637].name_id;
+  document.querySelector("#exc3-country").innerHTML = results[0][637].country;
+  document.querySelector("#exc3-site").innerHTML = results[0][637].url;
 
-  document.querySelector("#exc4-id").innerHTML = results[0][562].name_id;
-  document.querySelector("#exc4-country").innerHTML = results[0][562].country;
-  document.querySelector("#exc4-site").innerHTML = results[0][562].url;
+  document.querySelector("#exc4-id").innerHTML = results[0][547].name_id;
+  document.querySelector("#exc4-country").innerHTML = results[0][547].country;
+  document.querySelector("#exc4-site").innerHTML = results[0][547].url;
 
-  document.querySelector("#exc5-id").innerHTML = results[0][50].name_id;
-  document.querySelector("#exc5-country").innerHTML = results[0][50].country;
-  document.querySelector("#exc5-site").innerHTML = results[0][50].url;
+  document.querySelector("#exc5-id").innerHTML = results[0][171].name_id;
+  document.querySelector("#exc5-country").innerHTML = results[0][171].country;
+  document.querySelector("#exc5-site").innerHTML = results[0][171].url;
 
-  document.querySelector("#exc6-id").innerHTML = results[0][187].name_id;
-  document.querySelector("#exc6-country").innerHTML = results[0][187].country;
-  document.querySelector("#exc6-site").innerHTML = results[0][187].url;
+  document.querySelector("#exc6-id").innerHTML = results[0][501].name_id;
+  document.querySelector("#exc6-country").innerHTML = results[0][501].country;
+  document.querySelector("#exc6-site").innerHTML = results[0][501].url;
 
-  document.querySelector("#exc7-id").innerHTML = results[0][547].name_id;
-  document.querySelector("#exc7-country").innerHTML = results[0][547].country;
-  document.querySelector("#exc7-site").innerHTML = results[0][547].url;
+  document.querySelector("#exc7-id").innerHTML = results[0][187].name_id;
+  document.querySelector("#exc7-country").innerHTML = results[0][187].country;
+  document.querySelector("#exc7-site").innerHTML = results[0][187].url;
 
-  document.querySelector("#exc8-id").innerHTML = results[0][571].name_id;
-  document.querySelector("#exc8-country").innerHTML = results[0][571].country;
-  document.querySelector("#exc8-site").innerHTML = results[0][571].url;
+  document.querySelector("#exc8-id").innerHTML = results[0][260].name_id;
+  document.querySelector("#exc8-country").innerHTML = results[0][260].country;
+  document.querySelector("#exc8-site").innerHTML = results[0][260].url;
 
-  document.querySelector("#exc9-id").innerHTML = results[0][49].name_id;
-  document.querySelector("#exc9-country").innerHTML = results[0][49].country;
-  document.querySelector("#exc9-site").innerHTML = results[0][49].url;
+  document.querySelector("#exc9-id").innerHTML = results[0][669].name_id;
+  document.querySelector("#exc9-country").innerHTML = results[0][669].country;
+  document.querySelector("#exc9-site").innerHTML = results[0][669].url;
 
-  document.querySelector("#exc10-id").innerHTML = results[0][582].name_id;
-  document.querySelector("#exc10-country").innerHTML = results[0][582].country;
-  document.querySelector("#exc10-site").innerHTML = results[0][582].url;
+  document.querySelector("#exc10-id").innerHTML = results[0][595].name_id;
+  document.querySelector("#exc10-country").innerHTML = results[0][595].country;
+  document.querySelector("#exc10-site").innerHTML = results[0][595].url;
 
-  document.querySelector("#exc11-id").innerHTML = results[0][209].name_id;
-  document.querySelector("#exc11-country").innerHTML = results[0][209].country;
-  document.querySelector("#exc11-site").innerHTML = results[0][209].url;
+  document.querySelector("#exc11-id").innerHTML = results[0][49].name_id;
+  document.querySelector("#exc11-country").innerHTML = results[0][49].country;
+  document.querySelector("#exc11-site").innerHTML = results[0][49].url;
 
-  document.querySelector("#exc12-id").innerHTML = results[0][96].name_id;
-  document.querySelector("#exc12-country").innerHTML = results[0][96].country;
-  document.querySelector("#exc12-site").innerHTML = results[0][96].url;
+  document.querySelector("#exc12-id").innerHTML = results[0][66].name_id;
+  document.querySelector("#exc12-country").innerHTML = results[0][66].country;
+  document.querySelector("#exc12-site").innerHTML = results[0][66].url;
 
-  document.querySelector("#exc13-id").innerHTML = results[0][563].name_id;
-  document.querySelector("#exc13-country").innerHTML = results[0][563].country;
-  document.querySelector("#exc13-site").innerHTML = results[0][563].url;
+  document.querySelector("#exc13-id").innerHTML = results[0][623].name_id;
+  document.querySelector("#exc13-country").innerHTML = results[0][623].country;
+  document.querySelector("#exc13-site").innerHTML = results[0][623].url;
 
-  document.querySelector("#exc14-id").innerHTML = results[0][249].name_id;
-  document.querySelector("#exc14-country").innerHTML = results[0][249].country;
-  document.querySelector("#exc14-site").innerHTML = results[0][249].url;
+  document.querySelector("#exc14-id").innerHTML = results[0][571].name_id;
+  document.querySelector("#exc14-country").innerHTML = results[0][571].country;
+  document.querySelector("#exc14-site").innerHTML = results[0][571].url;
 
-  document.querySelector("#exc15-id").innerHTML = results[0][85].name_id;
-  document.querySelector("#exc15-country").innerHTML = results[0][85].country;
-  document.querySelector("#exc15-site").innerHTML = results[0][85].url;
+  document.querySelector("#exc15-id").innerHTML = results[0][190].name_id;
+  document.querySelector("#exc15-country").innerHTML = results[0][190].country;
+  document.querySelector("#exc15-site").innerHTML = results[0][190].url;
 
-  document.querySelector("#exc16-id").innerHTML = results[0][171].name_id;
-  document.querySelector("#exc16-country").innerHTML = results[0][171].country;
-  document.querySelector("#exc16-site").innerHTML = results[0][171].url;
+  document.querySelector("#exc16-id").innerHTML = results[0][469].name_id;
+  document.querySelector("#exc16-country").innerHTML = results[0][469].country;
+  document.querySelector("#exc16-site").innerHTML = results[0][469].url;
 
   document.querySelector("#exc17-id").innerHTML = results[0][230].name_id;
   document.querySelector("#exc17-country").innerHTML = results[0][230].country;
   document.querySelector("#exc17-site").innerHTML = results[0][230].url;
 
-  document.querySelector("#exc18-id").innerHTML = results[0][490].name_id;
-  document.querySelector("#exc18-country").innerHTML = results[0][490].country;
-  document.querySelector("#exc18-site").innerHTML = results[0][490].url;
+  document.querySelector("#exc18-id").innerHTML = results[0][244].name_id;
+  document.querySelector("#exc18-country").innerHTML = results[0][244].country;
+  document.querySelector("#exc18-site").innerHTML = results[0][244].url;
 
-  document.querySelector("#exc19-id").innerHTML = results[0][56].name_id;
-  document.querySelector("#exc19-country").innerHTML = results[0][56].country;
-  document.querySelector("#exc19-site").innerHTML = results[0][56].url;
+  document.querySelector("#exc19-id").innerHTML = results[0][546].name_id;
+  document.querySelector("#exc19-country").innerHTML = results[0][546].country;
+  document.querySelector("#exc19-site").innerHTML = results[0][546].url;
 
-  document.querySelector("#exc20-id").innerHTML = results[0][9].name_id;
-  document.querySelector("#exc20-country").innerHTML = results[0][9].country;
-  document.querySelector("#exc20-site").innerHTML = results[0][9].url;
+  document.querySelector("#exc20-id").innerHTML = results[0][56].name_id;
+  document.querySelector("#exc20-country").innerHTML = results[0][56].country;
+  document.querySelector("#exc20-site").innerHTML = results[0][56].url;
 });
 
 // CHART 1 // CHART 1 //
